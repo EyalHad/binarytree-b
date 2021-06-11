@@ -137,7 +137,7 @@ namespace ariel
                     if(copyFrom.left != nullptr) {
 
                         copyTo.left = new Node(copyFrom.left->value);
-                        copy(*(copyTo.left),*(copyFrom.left));
+                        copy(*(copyTo.left),*(copyFrom.left)); // convert pointer to Reference.
                     }
 
                     if(copyFrom.right != nullptr) {
@@ -154,7 +154,7 @@ namespace ariel
                     if(other.root != nullptr){
 
                         root = new Node(other.root->value);
-                        copy(*root,*(other.root));
+                        copy(*root,*(other.root)); 
                     }
                 }
                 /**
@@ -185,7 +185,7 @@ namespace ariel
                 }
                 BinaryTree<T>& operator=(BinaryTree<T> other){
                     if (this == &other) { return *this;}
-                    delete root;
+                    delete root; // init the this pointer
                     root = new Node(other.root->value);
                     copy(*root,*other.root);
                     return *this;
