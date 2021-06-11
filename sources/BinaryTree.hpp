@@ -137,13 +137,13 @@ namespace ariel
                     if(copyFrom.left != nullptr) {
 
                         copyTo.left = new Node(copyFrom.left->value);
-                        copy(*copyTo.left,*copyFrom.left);
+                        copy(*(copyTo.left),*(copyFrom.left));
                     }
 
                     if(copyFrom.right != nullptr) {
 
                         copyTo.right = new Node(copyFrom.right->value);
-                        copy(*copyTo.right, *copyFrom.right);
+                        copy(*(copyTo.right), *(copyFrom.right));
                     }
                 }
 
@@ -162,18 +162,14 @@ namespace ariel
                  * I created this method to Delet the tree in Recursion
                  */
 
-                void Del(Node* shoresh){
-                    if (shoresh != nullptr){
-                        Del(shoresh->left);
-                        Del(shoresh->right);
-                        delete root;
-                    } 
-                }
-                ~BinaryTree() { // distract
-                    if(root){
-                        delete root;
-                    }
-                }
+                // void Del(Node* shoresh){
+                //     if (shoresh != nullptr){
+                //         Del(shoresh->left);
+                //         Del(shoresh->right);
+                //         delete root;
+                //     } 
+                // }
+                ~BinaryTree() { if(root != nullptr){delete root;}}
 
                 /**
                  * Skeleton from our Course Github
